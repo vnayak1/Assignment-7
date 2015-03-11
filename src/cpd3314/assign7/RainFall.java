@@ -20,7 +20,6 @@
  * Objects. (5th ed.). Upper Saddle River, NJ: Pearson Education. 
  * ISBN: 978-0-13-285583-9 
  */
-
 package cpd3314.assign7;
 
 /* Exercise #1 - RainFall Class
@@ -42,8 +41,81 @@ package cpd3314.assign7;
  * - Gaddis pg. 490
  */
 /**
- * @author <ENTER YOUR NAME HERE>
+ * @author <vinayak shastri>
  */
 public class RainFall {
+
+    double[] total_rain = new double[12];
+
+    public double setRainfall(int x, double y) {
+
+        double rainfall;
+
+        total_rain[x] = total_rain[x] + y;
+        rainfall = total_rain[x];
+
+        return rainfall;
+
+    }
+
+    public double getRainfall(int z) {
+
+        double retrive_rain = total_rain[z];
+
+        return retrive_rain;
+
+    }
+
+    public double getTotal() {
+        double sum = 0;
+
+        for (double t : total_rain) {
+
+            sum = sum + t;
+        }
+
+        return sum;
+    }
+
+    public double getAverage() {
+
+        double sum = 0;
+
+        for (double t : total_rain) {
+
+            sum = sum + t;
+        }
+
+        double avg = sum / 12;
+        return avg;
+    }
+
+    public double getMax() {
+        double max = total_rain[0];
+
+        for (int i = 0; i < total_rain.length; i++) {
+            if (total_rain[i] > max) {
+
+                max = i;
+            }
+
+        }
+
+        return max;
+    }
+
+    public double getMin() {
+        double min = total_rain[0];
+
+        for (int i = 0; i < total_rain.length; i++) {
+            if (total_rain[i] < min) {
+
+                min = i;
+            }
+
+        }
+
+        return min;
+    }
 
 }
